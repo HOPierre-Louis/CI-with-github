@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                bat 'pip install -r requirements.txt'
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Testing') {
             steps {
-                bat 'python -m unittest'
+                sh 'python -m unittest'
             }
         }
         stage('Deploying') {
             steps {
                 // Build the Docker image
-                bat 'docker build -t github-jenkins-leolb .'
+                sh 'docker build -t github-jenkins-leolb .'
                 // Run a docker container from the image
-                bat 'docker run -d -p 5000:5000 github-jenkins-leolb'
+                sh 'docker run -d -p 5000:5000 github-jenkins-leolb'
             }
         }
     }
