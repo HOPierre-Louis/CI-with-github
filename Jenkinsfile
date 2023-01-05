@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                git url: 'https://github.com/HOPierre-Louis/CI-with-github.git/'
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Testing') {
             steps {
-                sh 'pip install -r requirements.txt'
+                
                 sh 'python -m unitest'
             }
         }
