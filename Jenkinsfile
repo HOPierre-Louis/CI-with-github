@@ -15,9 +15,9 @@ pipeline {
         stage('Deploying') {
             steps {
                 // Build the Docker image
-                sh 'docker build -t github-jenkins-leolb .'
+                sh 'docker3 build -t github-jenkins-leolb .'
                 // Run a docker container from the image
-                sh 'docker run -d -p 5000:5000 github-jenkins-leolb'
+                sh 'docker3 run -d -p 5000:5000 github-jenkins-leolb'
             }
         }
     }
