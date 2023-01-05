@@ -17,7 +17,7 @@ pipeline {
                 // Build the Docker image
                 sh 'docker build -t github-jenkins .'
                 // Run a docker container from the image
-                sh 'docker run -d -p 5000:5000 github-jenkins'
+                sh 'docker run -d -p 6003:5000 github-jenkins'
             }
         }
     }
