@@ -15,9 +15,9 @@ pipeline {
         stage('Deploying') {
             steps {
                 // Build the Docker image
-                zsh 'docker build -t github-jenkins .'
+                sh 'docker build -t github-jenkins .'
                 // Run a docker container from the image
-                zsh 'docker run -d -p 5000:5000 github-jenkins'
+                sh 'docker run -d -p 5000:5000 github-jenkins'
             }
         }
     }
